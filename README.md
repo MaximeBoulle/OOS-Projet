@@ -38,6 +38,12 @@ curl http://localhost:8080/books/{book_id}
 http://127.0.0.1:8000/docs
 ```
 
+###  TEST REST
+```bash
+```
+
+
+
 # gRPC
 
 - **Python** : 
