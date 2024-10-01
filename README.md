@@ -49,7 +49,7 @@ http://127.0.0.1:8000/docs
 
 ###  TEST REST
 ```bash
-
+python -m unittest discover -s services/REST/tests -p "test_*.py"
 ```
 
 
