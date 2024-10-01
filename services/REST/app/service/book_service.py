@@ -1,4 +1,7 @@
+import sys
+sys.path.append("services/REST/app")
 from data.book_repository import Book, BookRepository
+
 
 class BookService:
     def __init__(self):

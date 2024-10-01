@@ -1,4 +1,6 @@
 import psycopg2
+import sys
+sys.path.append("services/REST/app")
 from data.database import get_db_connection
 
 class Book:

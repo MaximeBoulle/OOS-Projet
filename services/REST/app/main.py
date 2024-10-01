@@ -1,4 +1,6 @@
 from fastapi import FastAPI
+import sys
+sys.path.append("services/REST/app")
 from web.routes import router
 from data.database import init_db
 
