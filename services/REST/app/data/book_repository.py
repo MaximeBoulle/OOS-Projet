@@ -29,3 +29,4 @@ class BookRepository:
         cursor.close()
         conn.close()
         return Book(*row).__dict__ if row else None
+

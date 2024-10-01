@@ -21,6 +21,8 @@ screen shots in the Readme page) (separate the services from the Javascript)
 
 - **FastAPI** : Framework for REST API in python
 - **PostgreSQL** : Relational database for the library
+- **Unittest**: Python's built-in unit testing framework.
+
 
 ###   Get the list of books
 ```bash

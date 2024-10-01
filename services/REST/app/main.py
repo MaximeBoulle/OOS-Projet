@@ -7,3 +7,7 @@ app = FastAPI()
 init_db()
 
 app.include_router(router)
+
+@app.get("/")
+async def root():
+    return {"Welcome to the FastAPI Library!"}
