@@ -23,16 +23,21 @@ screen shots in the Readme page) (separate the services from the Javascript)
 - **PostgreSQL** : Relational database for the library
 - **Unittest**: Python's built-in unit testing framework.
 
+### To start the REST server from the root
+```bash
+fastapi dev services/REST/app/main.py  
+```
+
 
 ###   Get the list of books
 ```bash
-curl http://localhost:8080/books/
+curl http://127.0.0.1:8000/books/
 ```
 
 ###   Get a book by the ID
 
 ```bash
-curl http://localhost:8080/books/{book_id}
+curl http://127.0.0.1:8000/books/{book_id}
 ```
 
 ###  OpenAPI definition (Swagger)
@@ -42,6 +47,7 @@ http://127.0.0.1:8000/docs
 
 ###  TEST REST
 ```bash
+
 ```
 
 
