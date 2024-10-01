@@ -25,6 +25,8 @@ screen shots in the Readme page) (separate the services from the Javascript)
 
 ### To start the REST server from the root
 ```bash
+pip install -r requirements.txt
+
 fastapi dev services/REST/app/main.py  
 ```
 
