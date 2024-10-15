@@ -49,7 +49,7 @@ http://127.0.0.1:8000/docs
 
 ###  TEST REST
 ```bash
-python -m unittest discover -s services/REST/tests -p "test_*.py"
+python -m unittest discover -s services/REST/tests"
 ```
 
 
@@ -57,6 +57,15 @@ python -m unittest discover -s services/REST/tests -p "test_*.py"
 # gRPC
 
 - **Python** : 
-- **MangoDB** : 
 
+### How I compiled the proto file
+```bash
+    python -m grpc_tools.protoc -I./proto --python_out=./generated --grpc_python_out=./generated ./proto/books.proto
+```
 
+### To start the gRCP server from the root
+```bash
+    pip install -r requirements.txt
+
+    python services/gRPC/grpc_server.py
+```
