@@ -17,6 +17,19 @@ Readme of your repository), or via a Javascript program (noted as a bonus) (give
 screen shots in the Readme page) (separate the services from the Javascript)
 
 
+## Firstly 
+
+1. Create a virtual environment
+```bash
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+```
+2. Install the requirements
+```bash
+pip install -r requirements.txt
+```
+
+
 ##  REST API - Library
 
 - **FastAPI** : Framework for REST API in python
@@ -25,8 +38,6 @@ screen shots in the Readme page) (separate the services from the Javascript)
 
 ### To start the REST server from the root
 ```bash
-pip install -r requirements.txt
-
 fastapi dev services/REST/app/main.py  
 ```
 
@@ -60,12 +71,12 @@ python -m unittest discover -s services/REST/tests"
 
 ### How I compiled the proto file
 ```bash
-    python -m grpc_tools.protoc -I./proto --python_out=./generated --grpc_python_out=./generated ./proto/books.proto
+python -m grpc_tools.protoc -I./proto --python_out=./generated --grpc_python_out=./generated ./proto/books.proto
 ```
 
 ### To start the gRCP server from the root
 ```bash
-    pip install -r requirements.txt
+pip install -r requirements.txt
 
-    python services/gRPC/grpc_server.py
+python services/gRPC/grpc_server.py
 ```
