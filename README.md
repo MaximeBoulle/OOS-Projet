@@ -28,7 +28,8 @@ python -m venv .venv
 ```bash
 pip install -r requirements.txt
 ```
-3. Configure the database PostgreSQL in the file database.py (services\REST\app\data\database.py)
+3. Create the database "library" on PostgreSQL
+4. Configure the database PostgreSQL in the file database.py (services\REST\app\data\database.py)
 ```
 DATABASE_URL = "dbname='library' user='postgres' password='admin' host='localhost'"
 ```

@@ -15,7 +15,7 @@ def init_db():
             author VARCHAR(255),
             average_rating FLOAT,
             isbn VARCHAR(13),
-            original_publication_year INT
+            original_publication_year FLOAT
         );
     """)
     conn.commit()
