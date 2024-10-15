@@ -28,6 +28,10 @@ python -m venv .venv
 ```bash
 pip install -r requirements.txt
 ```
+3. Configure the database PostgreSQL in the file database.py (services\REST\app\data\database.py)
+```
+DATABASE_URL = "dbname='library' user='postgres' password='admin' host='localhost'"
+```
 
 
 ##  REST API - Library
@@ -67,7 +71,7 @@ python -m unittest discover -s services/REST/tests"
 
 # gRPC
 
-- **Python** : 
+This service communicates with REST API to get database information through REST API
 
 ### How I compiled the proto file
 ```bash
@@ -80,3 +84,10 @@ pip install -r requirements.txt
 
 python services/gRPC/grpc_server.py
 ```
+
+### gRPC Service Endpoints
+
+1. Get a book by ID (method: GetBook): The gRPC service makes a request to the REST API to fetch a book's details by its ID.
+   
+2. Get all books (method: GetAllBooks): This method retrieves the list of all books from the REST API.
+
