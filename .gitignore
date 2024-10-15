@@ -1,1 +1,29 @@
-.env
+# Ignore node_modules directory
+node_modules/
+
+# Ignore log files
+*.log
+
+# Ignore environment variable files
+.venv
+
+# Ignore build directories
+dist/
+build/
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE-specific files
+.vscode/
+.idea/
+
+# Ignore compiled files
+*.class
+*.o
+*.so
+
+# Ignore temporary files
+*.tmp
+*.swp
