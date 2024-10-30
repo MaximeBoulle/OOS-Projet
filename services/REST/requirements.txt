@@ -1,6 +1,3 @@
 fastapi[standard]
 psycopg2-binary
-<<<<<<< HEAD
 uvicorn
-=======
->>>>>>> 024179626772d35eb10a5e2dde58e89a7ff07207

@@ -1,9 +1,5 @@
 grpcio
 grpcio-tools
 protobuf
-<<<<<<< HEAD
 requests
 runtime
-=======
-requests
->>>>>>> 024179626772d35eb10a5e2dde58e89a7ff07207
