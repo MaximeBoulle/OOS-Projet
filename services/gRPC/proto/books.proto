@@ -1,10 +1,21 @@
 syntax = "proto3";
 
 package books;
+option go_package = "github.com/MaximeBoulle/OOS-Projet/services/gRPC/proto;proto";
+
+import "google/api/annotations.proto";
 
 service BookService {
-    rpc GetBook (BookRequest) returns (BookResponse);
-    rpc GetAllBooks (Empty) returns (BooksResponse);
+    rpc GetBook (BookRequest) returns (BookResponse) {
+        option (google.api.http) = {
+            get: "/v1/books/{id}"
+        };
+    }
+    rpc GetAllBooks (Empty) returns (BooksResponse) {
+        option (google.api.http) = {
+            get: "/v1/books"
+        };
+    }
 }
 
 message BookRequest {

@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  rest:
+    build:
+      context: ./services/REST
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgresql://postgres:admin@db:5432/library
+    networks:
+      - oos-network
+
+  grpc:
+    build:
+      context: ./services/gRPC
+      dockerfile: Dockerfile
+    ports:
+      - "50051:50051"
+    networks:
+      - oos-network
+
+  db:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_DB: library
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+    ports:
+      - "5432:5432"
+    networks:
+      - oos-network
+
+networks:
+  oos-network:
+    driver: bridge

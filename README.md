@@ -17,76 +17,62 @@ Readme of your repository), or via a Javascript program (noted as a bonus) (give
 screen shots in the Readme page) (separate the services from the Javascript)
 
 
-## Firstly 
+## My project
 
-1. Create a virtual environment
+This project is a Library. The REST API is directly connected to the database in PostgreSQL. The gRPC is connected to the REST API to fetch data from this one. All the project was done in Python.
+
+## Run the project
+
+#### Docker
+1. In the terminal
 ```bash
-python -m venv .venv
-.venv\Scripts\Activate.ps1
+docker compose up --build
 ```
-2. Install the requirements
-```bash
-pip install -r requirements.txt
-```
-3. Create the database "library" on PostgreSQL
-4. Configure the database PostgreSQL in the file database.py (services\REST\app\data\database.py)
-```
-DATABASE_URL = "dbname='library' user='postgres' password='admin' host='localhost'"
-```
+2. Enjoy !
 
 
 ##  REST API - Library
+
+This API is directly connected with the database.
 
 - **FastAPI** : Framework for REST API in python
 - **PostgreSQL** : Relational database for the library
 - **Unittest**: Python's built-in unit testing framework.
 
-### To start the REST server from the root
+
+###  Rest API Endpoints
+
+1.   Get the list of books
 ```bash
-fastapi dev services/REST/app/main.py  
+curl http://localhost:8000/books/
 ```
 
-
-###   Get the list of books
-```bash
-curl http://127.0.0.1:8000/books/
-```
-
-###   Get a book by the ID
+2.   Get a book by the ID
 
 ```bash
-curl http://127.0.0.1:8000/books/{book_id}
+curl http://localhost:8000/books/{book_id}
 ```
 
 ###  OpenAPI definition (Swagger)
 ```bash
-http://127.0.0.1:8000/docs
+http://localhost:8000/docs
 ```
 
-###  TEST REST
+![OpenAPI FastAPI](fastapi.png)
+
+###  Rest Test
 ```bash
 python -m unittest discover -s services/REST/tests"
 ```
 
 
+# gRPC API
 
-# gRPC
+This service communicates with REST API to get database information through REST API in **python** 
 
-This service communicates with REST API to get database information through REST API
+![OpenAPI gRPC](grpc.png)
 
-### How I compiled the proto file
-```bash
-python -m grpc_tools.protoc -I./proto --python_out=./generated --grpc_python_out=./generated ./proto/books.proto
-```
-
-### To start the gRCP server from the root
-```bash
-pip install -r requirements.txt
-
-python services/gRPC/grpc_server.py
-```
-
-### gRPC Service Endpoints
+### gRPC API Endpoints
 
 1. Get a book by ID (method: GetBook): The gRPC service makes a request to the REST API to fetch a book's details by its ID.
    

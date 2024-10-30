@@ -2,7 +2,7 @@ import csv
 import psycopg2
 import os
 
-DATABASE_URL = "dbname='library' user='postgres' password='admin' host='localhost'"
+DATABASE_URL = "postgresql://postgres:admin@db:5432/library"
 
 def init_db():
     conn = psycopg2.connect(DATABASE_URL)
